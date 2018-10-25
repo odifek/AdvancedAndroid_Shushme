@@ -16,10 +16,14 @@ package com.example.android.shushme;
 * limitations under the License.
 */
 
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
+
+import com.google.android.gms.location.GeofencingEvent;
 
 public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
@@ -44,5 +48,15 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         // TODO (6) Show a notification to alert the user that the ringer mode has changed.
         // Feel free to create a helper method (sendNotification)
 
+        GeofencingEvent ge = GeofencingEvent.fromIntent(intent);
+
+    }
+
+    private void setRingerMode(Context context, int mode) {
+        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        // CHeck for DND permissions for api 24+
+        if (Build.VERSION.SDK_INT < 24 || (Build.VERSION.SDK_INT >= 24 && nm.isNotificationPolicyAccessGranted())) {
+
+        }
     }
 }
