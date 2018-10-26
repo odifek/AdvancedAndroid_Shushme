@@ -10,4 +10,7 @@
     <string name="enable_geofences">Enable Geofences</string>
     <string name="privacy">http://www.google.com/policies/privacy</string>
     <string name="ringer_permissions">Enable access to ringer</string>
+    <string name="silent_mode_activiated">Silent mode activiated!</string>
+    <string name="back_to_normal">Back to normal</string>
+    <string name="touch_to_relaunch">Touch to relaunch</string>
 </resources>
